@@ -1,8 +1,9 @@
 ## random sample000facilities/_random_sample/finaldata_join_030222_to_sa
 setwd("Z:/userpath/_random_sample")
 options(scipen=999)
+options(java.parameters = "-Xmx8048m")
 library(dplyr)
-
+library(RJDBC)
 
 #rjdbc
 ## Oracle connection code here
