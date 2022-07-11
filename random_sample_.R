@@ -1,12 +1,12 @@
 ## random sample000facilities/_random_sample/finaldata_join_030222_to_sa
-setwd("Z:/ArcGIS/Projects/36_EJ_Analysis_Opt3/ArcGIS/_output_files/1_perc_selection/4000facilities/_random_sample")
+setwd("Z:/userpath/_random_sample")
 options(scipen=999)
 library(dplyr)
 
 
 #rjdbc
 ## Oracle connection code here
-drvr = JDBC("oracle.jdbc.OracleDriver", classPath="C:/users/dyavrom/github/rcra-public-web/target/rcra-public-web/WEB-INF/lib/ojdbc8.jar") 
+drvr = JDBC("oracle.jdbc.OracleDriver", classPath="C:/userpath/ojdbc8.jar") 
 conn = dbConnect(drvr, "jdbc:oracle:thin:@//localhost:####/******",
                  user = "dyn",
                  password = "********")
@@ -15,7 +15,7 @@ conn = dbConnect(drvr, "jdbc:oracle:thin:@//localhost:####/******",
 source("dtj_sql.r") ## sql not written by me. 
 
 #load data
-data = read.csv("finaldata_join_030222_to_sample.csv", stringsAsFactors = FALSE, header = TRUE)
+data = read.csv("data_to_sample.csv", stringsAsFactors = FALSE, header = TRUE)
 
 #subset data and change col names
 dtj = dtj[c(3, 8,10)]
